@@ -19,6 +19,14 @@ echo $pass;
 
 echo"<hr>";
 
+echo "login Information: <br>";
+
+if($dbUserName == $user && $dbPassword==$pass){
+    echo "<font color='green'>Your login is successful</font>";
+}else{
+    echo "<font color='red'>login Failed</font>";
+}
+
 
 
 
