@@ -14,21 +14,25 @@
 // echo "<a href='https://www.google.com'>{$_REQUEST['username']}</a>";
 // echo $_REQUEST ['password'];
 
-$user= $_REQUEST['username'];
-$pass= $_REQUEST['password'];
+//  redirect
 
-// echo $user;
-// echo $pass;
+// $user= $_REQUEST['username'];
+// $pass= $_REQUEST['password'];
 
-if($user=="google"){
-    header("location: https://www.google.com");
+// // echo $user;
+// // echo $pass;
 
-}elseif($user=="facebook"){
-    header("location: https://www.facebook.com");
+// if($user=="google"){
+//     header("location: https://www.google.com");
 
-}else{
-    echo "you didnt redirect.";
-}
+// }elseif($user=="facebook"){
+//     header("location: https://www.facebook.com");
+
+// }else{
+//     echo "you didnt redirect.";
+// }
+
+
 
 
 require 'includes/footer.php';?>
