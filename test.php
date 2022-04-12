@@ -86,6 +86,8 @@
 
 ?>
 
+<!-- Database connect -->
+
 
 <?php
 
@@ -100,41 +102,25 @@ if (isset($_POST['submit'])){
         die ("Not Connected.". mysqli_error());
     }
 
-   
+    $query = "INSERT INTO user_info (username, email, password) VALUES ('$username', '$email', '$password')";
 
-    $query= "INSERT INTO user_info(username, email, password)";
-    $query.= "VALUES('$username', '$email', '$password)";
+    $result= mysqli_query($connection, $query);
 
-    $result= mysqli_query($connection,$query);
-
-     if($result){
-         echo "Insert success";
-     }else{
-         echo "Insert not success";
+     if(!$result){
+        die ("Insert not success" . mysqli_error());
      }
-
-
-
-
 }
-
-
 
 ?>
 
 
 <form action="test.php" method="post">
 
-    <input type="text" name="username" placeholder="username"><br><br>    
-    <input type="email" name="email" placeholder="email"><br><br>    
-    <input type="password" name="password" placeholder="password"><br><br>    
+    <input type="text" name="username" placeholder="username" autocomplete="on"><br><br>    
+    <input type="email" name="email" placeholder="email" autocomplete="on"><br><br>    
+    <input type="password" name="password" placeholder="password" autocomplete="on"><br><br>    
     <input type="submit" value="submit" name="submit">
 
 </form>
-
-
-
-
-
 
 <?php require 'includes/footer.php';?>
