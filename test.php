@@ -80,11 +80,59 @@
 
 //session
 
-session_start();
+// session_start();
 
-$_SESSION['user']="Asif"
+// $_SESSION['user']="Asif"
 
 ?>
+
+
+<?php
+
+if (isset($_POST['submit'])){
+    $username = $_POST['username'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    $connection = mysqli_connect('localhost', 'root', '', 'user');
+
+    if(!$connection){
+        die ("Not Connected.". mysqli_error());
+    }
+
+   
+
+    $query= "INSERT INTO user_info(username, email, password)";
+    $query.= "VALUES('$username', '$email', '$password)";
+
+    $result= mysqli_query($connection,$query);
+
+     if($result){
+         echo "Insert success";
+     }else{
+         echo "Insert not success";
+     }
+
+
+
+
+}
+
+
+
+?>
+
+
+<form action="test.php" method="post">
+
+    <input type="text" name="username" placeholder="username"><br><br>    
+    <input type="email" name="email" placeholder="email"><br><br>    
+    <input type="password" name="password" placeholder="password"><br><br>    
+    <input type="submit" value="submit" name="submit">
+
+</form>
+
+
 
 
 

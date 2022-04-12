@@ -44,18 +44,17 @@
 
 // PASS ENCRYPTED
 
-$usr= $_REQUEST ['username'];
-$email= $_REQUEST ['email'];
-$pass= $_REQUEST ['password'];
+// $usr= $_REQUEST ['username'];
+// $email= $_REQUEST ['email'];
+// $pass= $_REQUEST ['password'];
 
-$hash_format= "$2a$07$";
-$salt= "shfghsadkjfaskjshfahfd22";
-$conC= $hash_format. $salt;
+// $hash_format= "$2a$07$";
+// $salt= "shfghsadkjfaskjshfahfd22";
+// $conC= $hash_format. $salt;
 
-echo $pass;
-echo"<br>";
-echo crypt($pass, $conC);
-
+// echo $pass;
+// echo"<br>";
+// echo crypt($pass, $conC);
    
 
 
