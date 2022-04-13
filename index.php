@@ -16,6 +16,10 @@ $count= mysqli_num_rows($adanprodan);
 
 if($count > 0){
 
+    if(isset($_REQUEST['deleted'])){
+        echo "<font color='red'>Data deleted</font>";
+    }
+
 ?>
 
 <table class="table">
@@ -46,7 +50,7 @@ while($row= mysqli_fetch_assoc($adanprodan)){
             <td><?php echo $username ?></td>
             <td><?php echo $email ?></td>
             <td><?php echo $password ?></td>
-            <td><a href="#">DELETE</td>
+            <td><a href="deletedb.php?Id=<?php echo $db_Id ?> ">DELETE</td>
         </tr>
     </tbody>
 
