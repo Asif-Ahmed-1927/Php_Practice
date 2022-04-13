@@ -18,7 +18,7 @@
             <td>Asif</td>
             <td>asifbin8@gmail.com</td>
             <td>123456</td>
-            <td><a href="#">DELETE</td>
+            <td><a href="#"></a>ACTION</td>
         </tr>
     </tbody>
 </table>
