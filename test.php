@@ -88,39 +88,82 @@
 
 <!-- Database connect -->
 
+<!-- Create start -->
+
 
 <?php
 
-if (isset($_POST['submit'])){
-    $username = $_POST['username'];
-    $email = $_POST['email'];
-    $password = $_POST['password'];
+// if (isset($_POST['submit'])){
+//     $username = $_POST['username'];
+//     $email = $_POST['email'];
+//     $password = $_POST['password'];
+
+//     if($username && $email && $password){
+
+    // read database satrt
 
     $connection = mysqli_connect('localhost', 'root', '', 'user');
 
     if(!$connection){
-        die ("Not Connected.". mysqli_error());
+        die ("Not Connected.". mysqli_error($connection));
     }
 
-    $query = "INSERT INTO user_info (username, email, password) VALUES ('$username', '$email', '$password')";
+    $query= "SELECT * FROM user_info";
 
-    $result= mysqli_query($connection, $query);
+    $adanprodan= mysqli_query($connection, $query);
 
-     if(!$result){
-        die ("Insert not success" . mysqli_error());
-     }
+    $count= mysqli_num_rows($adanprodan);
+
+    if($count > 0){
+
+
+    while($row= mysqli_fetch_assoc($adanprodan)){
+
+        // echo "<pre>";
+
+        // print_r($row);
+
+        // echo "</pre>";
+
+        echo "{$row['Id']}";
+        echo"<br>";
+
+        echo"{$row['username']}";
+        echo"<br>";
+
+    }
+
+    echo "$count";
+
+}else{
+    echo "You dont have any data on your database";
 }
+
+// read database end
+
+
+//     $query = "INSERT INTO user_info (username, email, password) VALUES ('$username', '$email', '$password')";
+
+//     $result= mysqli_query($connection, $query);
+
+//      if(!$result){
+//         die ("Insert not success" . mysqli_error());
+//      }
+//     }
+// }
 
 ?>
 
 
-<form action="test.php" method="post">
+<!-- <form action="test.php" method="post">
 
     <input type="text" name="username" placeholder="username" autocomplete="on"><br><br>    
     <input type="email" name="email" placeholder="email" autocomplete="on"><br><br>    
     <input type="password" name="password" placeholder="password" autocomplete="on"><br><br>    
     <input type="submit" value="submit" name="submit">
 
-</form>
+</form> -->
+
+<!-- cteate end -->
 
 <?php require 'includes/footer.php';?>
