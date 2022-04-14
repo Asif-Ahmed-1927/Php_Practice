@@ -50,7 +50,7 @@ while($row= mysqli_fetch_assoc($adanprodan)){
             <td><?php echo $username ?></td>
             <td><?php echo $email ?></td>
             <td><?php echo $password ?></td>
-            <td><a href="deletedb.php?Id=<?php echo $db_Id ?> ">DELETE</td>
+            <td><a href="single_data_edit.php?edit_id=<?php echo $db_Id; ?>">Edit</a> || <a href="deletedb.php?Id=<?php echo $db_Id ?> ">DELETE</a></td>
         </tr>
     </tbody>
 
