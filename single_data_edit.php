@@ -17,15 +17,17 @@ if(isset($_REQUEST['edit_id'])){
     
     while($row= mysqli_fetch_assoc($select_info)){
 
-        echo $row['username'];
+    
 ?>
 
 <form action="update_data.php" method="post">
 
-<input type="text" name="username" placeholder="username"><br><br>    
-<input type="email" name="email" placeholder="email"><br><br>    
-<input type="password" name="password" placeholder="password"><br><br>    
+<input type="text" name="username" value= "<?php echo $row['username'];?>" placeholder="username"><br><br>    
+<input type="email" name="email" value= "<?php echo $row['email'];?>" placeholder="email"><br><br>    
+<input type="password" name="password" value= "<?php echo $row['password'];?>" placeholder="password"><br><br>    
 <input type="submit" value="update data" name="submit">
+<input type="hidden" name="update_hidden_id" value="<?php echo $recv_id; ?>">
+
 
 </form>
 
