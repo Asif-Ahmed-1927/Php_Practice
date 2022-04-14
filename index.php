@@ -19,6 +19,11 @@ if($count > 0){
     if(isset($_REQUEST['deleted'])){
         echo "<font color='red'>Data deleted</font>";
     }
+    
+    if(isset($_REQUEST['updated'])){
+        echo "<font color='green'>Data updated</font>";
+    }
+    
 
 ?>
 

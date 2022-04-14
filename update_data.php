@@ -16,5 +16,11 @@ if(isset($_REQUEST['submit'])){
 
     $update_query= "UPDATE user_info SET username=' $user', email='$email', password='$pass' WHERE Id= $hidden_id" ;
 
+    $final_update_query= mysqli_query($connection, $update_query);
+
+    if($final_update_query){
+        header("location: index.php?updated");
+    }
+
 }
 ?>
