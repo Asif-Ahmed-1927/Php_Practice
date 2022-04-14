@@ -30,6 +30,7 @@ if($count > 0){
 <table class="table">
     <thead>
         <tr>
+            <th>Serial_No</th>
             <th>ID</th>
             <th>NAME</th>
             <th>EMAIL</th>
@@ -39,18 +40,21 @@ if($count > 0){
 
     </thead>
 
-<?php    
+<?php  
 
+$serial_no= 0;
 while($row= mysqli_fetch_assoc($adanprodan)){
 
     $db_Id= $row['Id'];
     $username= $row['username'];
     $email= $row['email'];
     $password= $row['password'];
+    $serial_no++;
 ?>
 
 <tbody>
         <tr>
+            <td><?php echo $serial_no ?></td>
             <td><?php echo $db_Id ?></td>
             <td><?php echo $username ?></td>
             <td><?php echo $email ?></td>
